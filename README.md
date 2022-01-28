@@ -3,7 +3,7 @@ What about Gestures? 👌🏼
 </h1>
 
  <a href="https://youtu.be/xpT2shjX790" target="_blank">
-      <img src="https://raw.githubusercontent.com/enzomanuelmangano/what-about-gestures/main/.assets/what-about-gestures.png" title="what-about-gestures">
+      <img src="https://github.com/enzomanuelmangano/what-about-gestures/blob/main/.assets/what-about-gestures.png" title="what-about-gestures">
   </a>
 
 What about Gestures is a Youtube Playlist where I like to share the process of creating React Native animations. All animations are always made from scratch trying to make them easy to understand.
