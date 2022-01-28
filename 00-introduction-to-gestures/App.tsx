@@ -1,5 +1,9 @@
 import { Dimensions, StyleSheet, View } from 'react-native';
-import { Gesture, GestureDetector } from 'react-native-gesture-handler';
+import {
+  Gesture,
+  GestureDetector,
+  GestureHandlerRootView,
+} from 'react-native-gesture-handler';
 import Animated, {
   useAnimatedGestureHandler,
   useAnimatedStyle,
@@ -80,17 +84,23 @@ export default function App() {
   });
 
   return (
-    <View style={styles.container}>
-      <Animated.View
-        style={[styles.circle, { backgroundColor: 'green' }, rGreenCircleStyle]}
-      />
-      <Animated.View
-        style={[styles.circle, { backgroundColor: 'red' }, rRedCircleStyle]}
-      />
-      <GestureDetector gesture={gesture}>
-        <Animated.View style={[styles.circle, rBlueCircleStyle]} />
-      </GestureDetector>
-    </View>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <View style={styles.container}>
+        <Animated.View
+          style={[
+            styles.circle,
+            { backgroundColor: 'green' },
+            rGreenCircleStyle,
+          ]}
+        />
+        <Animated.View
+          style={[styles.circle, { backgroundColor: 'red' }, rRedCircleStyle]}
+        />
+        <GestureDetector gesture={gesture}>
+          <Animated.View style={[styles.circle, rBlueCircleStyle]} />
+        </GestureDetector>
+      </View>
+    </GestureHandlerRootView>
   );
 }
 
