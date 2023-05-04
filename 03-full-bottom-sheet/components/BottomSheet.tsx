@@ -4,6 +4,7 @@ import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import Animated, {
   Extrapolate,
   interpolate,
+  useAnimatedProps,
   useAnimatedStyle,
   useSharedValue,
   withSpring,
@@ -75,13 +76,43 @@ const BottomSheet = React.forwardRef<BottomSheetRefProps, BottomSheetProps>(
       };
     });
 
+    const rBackdropStyle = useAnimatedStyle(() => {
+      return {
+        opacity: withTiming(active.value ? 1 : 0),
+      };
+    }, []);
+
+    const rBackdropProps = useAnimatedProps(() => {
+      return {
+        pointerEvents: active.value ? 'auto' : 'none',
+      } as any;
+    }, []);
+
     return (
-      <GestureDetector gesture={gesture}>
-        <Animated.View style={[styles.bottomSheetContainer, rBottomSheetStyle]}>
-          <View style={styles.line} />
-          {children}
-        </Animated.View>
-      </GestureDetector>
+      <>
+        <Animated.View
+          onTouchStart={() => {
+            // Dismiss the BottomSheet
+            scrollTo(0);
+          }}
+          animatedProps={rBackdropProps}
+          style={[
+            {
+              ...StyleSheet.absoluteFillObject,
+              backgroundColor: 'rgba(0,0,0,0.4)',
+            },
+            rBackdropStyle,
+          ]}
+        />
+        <GestureDetector gesture={gesture}>
+          <Animated.View
+            style={[styles.bottomSheetContainer, rBottomSheetStyle]}
+          >
+            <View style={styles.line} />
+            {children}
+          </Animated.View>
+        </GestureDetector>
+      </>
     );
   }
 );

@@ -19,7 +19,7 @@ export default function App() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <View style={styles.container}>
-        <StatusBar style="light" />
+        <StatusBar style="dark" />
         <TouchableOpacity style={styles.button} onPress={onPress} />
         <BottomSheet ref={ref}>
           <View style={{ flex: 1, backgroundColor: 'orange' }} />
@@ -32,7 +32,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#111',
+    backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 25,
     aspectRatio: 1,
-    backgroundColor: 'white',
+    backgroundColor: 'orange',
     opacity: 0.6,
   },
 });
