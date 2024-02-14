@@ -10,8 +10,8 @@ What about Gestures is a Youtube Playlist where I like to share the process of c
 
 The basis of all animations are always the following packages:
 
-- [react-native-gesture-handler](https://docs.swmansion.com/react-native-gesture-handler/docs)
-- [react-native-reanimated v2](https://docs.swmansion.com/react-native-reanimated/docs/)
+- [react-native-gesture-handler](https://docs.swmansion.com/react-native-gesture-handler/)
+- [react-native-reanimated](https://docs.swmansion.com/react-native-reanimated/)
 
 Sounds interesting? [Click here!](https://youtu.be/xpT2shjX790)
 
@@ -21,3 +21,4 @@ Sounds interesting? [Click here!](https://youtu.be/xpT2shjX790)
 - [Building a BottomSheet from scratch](https://youtu.be/KvRqsRwpwhY)
 - [Animated 3D Card in React Native (Reanimated and Skia)](https://youtu.be/pVesCl7TY8A)
 - [Creating a BottomSheet Backdrop in React Native](https://youtu.be/hfsBArfvK74)
+- [Improving Tap Gestures in React Native](https://youtu.be/DWFS_dSnJOs)
